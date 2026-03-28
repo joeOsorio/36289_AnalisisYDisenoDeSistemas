@@ -1,0 +1,201 @@
+
+<style>
+#erd svg { width: 100%; height: auto; }
+#erd .er.entityBox { rx: 8; }
+</style>
+<div id="erd" style="padding: 8px 0;"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryColor: dark ? '#3C3489' : '#EEEDFE',
+    primaryTextColor: dark ? '#CECBF6' : '#26215C',
+    primaryBorderColor: dark ? '#7F77DD' : '#534AB7',
+    secondaryColor: dark ? '#085041' : '#E1F5EE',
+    secondaryTextColor: dark ? '#9FE1CB' : '#04342C',
+    secondaryBorderColor: dark ? '#1D9E75' : '#0F6E56',
+    tertiaryColor: dark ? '#444441' : '#F1EFE8',
+    tertiaryTextColor: dark ? '#D3D1C7' : '#2C2C2A',
+    tertiaryBorderColor: dark ? '#888780' : '#5F5E5A',
+  },
+  er: {
+    diagramPadding: 30,
+    useMaxWidth: true,
+  }
+});
+
+const diagram = `erDiagram
+  USUARIO {
+    int id_usuario PK
+    string nombre
+    string contrasena
+    string rol
+    datetime ultima_sesion
+    int intentos_fallidos
+    boolean bloqueado
+  }
+
+  CAJA {
+    int id_caja PK
+    datetime fecha_apertura
+    datetime fecha_cierre
+    decimal fondo_inicial
+    decimal total_ventas
+    decimal efectivo_contado
+    decimal diferencia
+    string estado
+    int id_usuario FK
+  }
+
+  VENTA {
+    int id_venta PK
+    datetime fecha_hora
+    decimal subtotal
+    decimal impuestos
+    decimal total
+    string estado
+    int id_usuario FK
+    int id_caja FK
+  }
+
+  DETALLE_VENTA {
+    int id_detalle PK
+    int cantidad
+    decimal precio_unitario
+    decimal descuento
+    decimal subtotal
+    int id_venta FK
+    int id_producto FK
+  }
+
+  PRODUCTO {
+    int id_producto PK
+    string codigo
+    string nombre
+    string categoria
+    decimal precio
+    decimal costo
+    int stock_actual
+    int stock_minimo
+    boolean activo
+  }
+
+  PAGO {
+    int id_pago PK
+    string metodo
+    decimal monto
+    string num_autorizacion
+    int id_venta FK
+  }
+
+  DEVOLUCION {
+    int id_devolucion PK
+    datetime fecha
+    string motivo
+    decimal monto_reembolso
+    string tipo_reembolso
+    int id_venta FK
+    int id_usuario FK
+  }
+
+  DETALLE_DEVOLUCION {
+    int id_det_dev PK
+    int cantidad
+    decimal monto
+    int id_devolucion FK
+    int id_producto FK
+  }
+
+  DESCUENTO {
+    int id_descuento PK
+    string tipo
+    decimal valor
+    string motivo
+    int id_venta FK
+    int id_usuario FK
+  }
+
+  AJUSTE_INVENTARIO {
+    int id_ajuste PK
+    datetime fecha
+    int cantidad_anterior
+    int cantidad_nueva
+    string motivo
+    int id_producto FK
+    int id_usuario FK
+  }
+
+  REPORTE {
+    int id_reporte PK
+    string tipo
+    datetime fecha_generacion
+    date rango_inicio
+    date rango_fin
+    string formato
+    int id_usuario FK
+  }
+
+  LOG_AUDITORIA {
+    int id_log PK
+    datetime fecha_hora
+    string accion
+    string modulo
+    int id_usuario FK
+  }
+
+  USUARIO ||--o{ CAJA : "apertura/cierre"
+  USUARIO ||--o{ VENTA : "realiza"
+  USUARIO ||--o{ DEVOLUCION : "procesa"
+  USUARIO ||--o{ DESCUENTO : "aplica"
+  USUARIO ||--o{ AJUSTE_INVENTARIO : "registra"
+  USUARIO ||--o{ REPORTE : "genera"
+  USUARIO ||--o{ LOG_AUDITORIA : "genera"
+
+  CAJA ||--o{ VENTA : "contiene"
+
+  VENTA ||--|{ DETALLE_VENTA : "incluye"
+  VENTA ||--|{ PAGO : "tiene"
+  VENTA ||--o{ DEVOLUCION : "origina"
+  VENTA ||--o{ DESCUENTO : "tiene"
+
+  DETALLE_VENTA }|--|| PRODUCTO : "referencia"
+  DETALLE_DEVOLUCION }|--|| PRODUCTO : "devuelve"
+
+  DEVOLUCION ||--|{ DETALLE_DEVOLUCION : "detalla"
+
+  PRODUCTO ||--o{ AJUSTE_INVENTARIO : "afecta"
+`;
+
+const { svg } = await mermaid.render('erd-svg', diagram);
+document.getElementById('erd').innerHTML = svg;
+
+document.querySelectorAll('#erd svg .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+</script>
