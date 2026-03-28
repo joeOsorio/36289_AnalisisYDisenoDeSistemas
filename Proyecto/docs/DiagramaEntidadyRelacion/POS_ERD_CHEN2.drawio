@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="POS ERD Chen">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ENTIDADES -->
+
+        <mxCell id="usuario" value="USUARIO" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="venta" value="VENTA" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="producto" value="PRODUCTO" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="caja" value="CAJA" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="250" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="detalle_venta" value="DETALLE_VENTA" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="250" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pago" value="PAGO" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="250" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="devolucion" value="DEVOLUCION" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="detalle_devolucion" value="DETALLE_DEVOLUCION" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="descuento" value="DESCUENTO" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="400" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ajuste" value="AJUSTE_INVENTARIO" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="400" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="reporte" value="REPORTE" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="550" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="log" value="LOG_AUDITORIA" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="550" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+
+        <!-- RELACIONES -->
+
+        <mxCell id="rel1" value="REALIZA" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="80" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="CONTIENE" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="80" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" value="INCLUYE" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="200" width="80" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel4" value="REFERENCIA" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="200" width="90" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel5" value="TIENE" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="200" width="80" height="60" as="geometry"/>
+        </mxCell>
+
+
+        <!-- CONEXIONES -->
+
+        <mxCell edge="1" parent="1" source="usuario" target="rel1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="rel1" target="venta">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="venta" target="rel3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="rel3" target="detalle_venta">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="detalle_venta" target="rel4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="rel4" target="producto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="venta" target="rel5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" parent="1" source="rel5" target="pago">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
