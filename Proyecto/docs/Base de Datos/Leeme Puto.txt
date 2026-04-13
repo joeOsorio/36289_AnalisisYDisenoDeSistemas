@@ -1,0 +1,5 @@
+Meterse admin y importar la base de datos y ya :3
+
+link por si andas menso:
+
+https://www.nettix.com.pe/documentacion/varios/como-sacar-copia-de-mi-base-de-datos-mysql-en-xampp
