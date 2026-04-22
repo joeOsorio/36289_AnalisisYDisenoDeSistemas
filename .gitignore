@@ -59,6 +59,9 @@ desktop.ini
 # !.vscode/settings.json
 # !.vscode/tasks.json
 # !.vscode/launch.json
+# ---- otros -------
+*.dia~
+
 
 # --- Kernel Module Compile Results ---
 *.mod*
