@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-05-04" agent="13.0" version="13.0" type="device">
+  <diagram name="Page-1" id="c7558073-3199-34ca-9ad7-cb6b6e6b588f">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Título del Diagrama -->
+        <mxCell id="titulo" value="DIAGRAMA DE INTERFACES - SISTEMA POS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="10" width="600" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- PANTALLA 1: Login -->
+        <mxCell id="panel_login" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="50" y="80" width="280" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo_login" value="PANTALLA DE LOGIN" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="50" y="95" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_usuario" value="Usuario:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="130" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="input_usuario" value="[ Textbox ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="140" y="128" width="160" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_password" value="Contraseña:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="input_password" value="[ Textbox ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="140" y="168" width="160" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_tipo" value="Tipo Usuario:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="210" width="70" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="combo_tipo" value="[ Dropdown ▼ ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="140" y="208" width="160" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_ingresar" value="Ingresar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90ee90;strokeColor=#4CAF50;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="250" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_cancelar_login" value="Cancelar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#f44336;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="230" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- PANTALLA 2: Menú Cajero -->
+        <mxCell id="panel_menu_cajero" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="380" y="80" width="280" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo_menu_cajero" value="MENÚ CAJERO" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="380" y="95" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_nueva_venta" value="➕ Nueva Venta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b3e5fc;strokeColor=#0288d1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="130" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_consultar_precios" value="🔍 Consultar Precios" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b3e5fc;strokeColor=#0288d1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="175" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_ver_reportes" value="📊 Ver Reportes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b3e5fc;strokeColor=#0288d1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="220" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_salir_cajero" value="🚪 Salir" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#f44336;" parent="1" vertex="1">
+          <mxGeometry x="410" y="265" width="220" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- PANTALLA 3: Menú Administrador -->
+        <mxCell id="panel_menu_admin" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="710" y="80" width="280" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo_menu_admin" value="MENÚ ADMINISTRADOR" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="710" y="95" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_gestionar_productos" value="📦 Gestionar Productos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;" parent="1" vertex="1">
+          <mxGeometry x="740" y="130" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_gestionar_usuarios" value="👤 Gestionar Usuarios" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;" parent="1" vertex="1">
+          <mxGeometry x="740" y="175" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_reportes_admin" value="📈 Reportes y Análisis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;" parent="1" vertex="1">
+          <mxGeometry x="740" y="220" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_inventario" value="📋 Control de Inventario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#c2185b;" parent="1" vertex="1">
+          <mxGeometry x="740" y="265" width="220" height="35" as="geometry" />
+        </mxCell>
+        
+        <!-- PANTALLA 4: Registro de Venta -->
+        <mxCell id="panel_venta" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f4c3;strokeColor=#558b2f;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="50" y="410" width="470" height="350" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo_venta" value="PANTALLA DE REGISTRO DE VENTA" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="50" y="420" width="470" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_id_venta" value="ID Venta: [Auto]" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="450" width="200" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_fecha" value="Fecha: [Actual]" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="280" y="450" width="200" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_producto" value="Producto:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="480" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="combo_producto" value="[ Dropdown - Seleccionar ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="140" y="478" width="360" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_cantidad" value="Cantidad:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="70" y="515" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="input_cantidad" value="[ Textbox ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="140" y="513" width="80" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_precio" value="Precio Unit:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="240" y="515" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_precio_val" value="$ 0.00" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=10;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="515" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_agregar_producto" value="✓ Agregar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90ee90;strokeColor=#4CAF50;" parent="1" vertex="1">
+          <mxGeometry x="420" y="510" width="80" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_tabla" value="Detalle de Compra" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="555" width="150" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tabla_detalles" value="Producto | Cant | Precio | SubTotal&#10;─────────────────────────────────&#10;[Detalles de la venta]" style="text;html=1;strokeColor=#999999;fillColor=#f9f9f9;align=left;fontSize=9;border=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="575" width="430" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_total" value="TOTAL:" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="665" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_total_val" value="$ 0.00" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=12;fontStyle=1;background=#90ee90;" parent="1" vertex="1">
+          <mxGeometry x="390" y="663" width="110" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_procesar_pago" value="💳 Procesar Pago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90ee90;strokeColor=#4CAF50;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="705" width="160" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_limpiar_venta" value="🔄 Limpiar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffeb3b;strokeColor=#fbc02d;" parent="1" vertex="1">
+          <mxGeometry x="245" y="705" width="100" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_cancelar_venta" value="✕ Cancelar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#f44336;" parent="1" vertex="1">
+          <mxGeometry x="360" y="705" width="140" height="35" as="geometry" />
+        </mxCell>
+        
+        <!-- PANTALLA 5: Gestión de Productos -->
+        <mxCell id="panel_productos" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0bee7;strokeColor=#6a1b9a;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="560" y="410" width="430" height="350" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="titulo_productos" value="GESTIÓN DE PRODUCTOS" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="560" y="420" width="430" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tabla_productos" value="Tabla de Productos&#10;ID | Nombre | Precio | Stock&#10;─────────────────────────────────&#10;[Listado de productos]" style="text;html=1;strokeColor=#999999;fillColor=#f9f9f9;align=left;fontSize=9;border=1;" parent="1" vertex="1">
+          <mxGeometry x="580" y="455" width="390" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_buscar_prod" value="Buscar:" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="580" y="575" width="50" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="input_buscar_prod" value="[ Textbox ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor:#999999;" parent="1" vertex="1">
+          <mxGeometry x="640" y="573" width="150" height="24" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_buscar_prod" value="🔍 Buscar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b3e5fc;strokeColor:#0288d1;" parent="1" vertex="1">
+          <mxGeometry x="800" y="571" width="70" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_nuevo_prod" value="➕ Nuevo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#90ee90;strokeColor:#4CAF50;" parent="1" vertex="1">
+          <mxGeometry x="580" y="620" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_editar_prod" value="✎ Editar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffeb3b;strokeColor=#fbc02d;" parent="1" vertex="1">
+          <mxGeometry x="675" y="620" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_eliminar_prod" value="✕ Eliminar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#f44336;" parent="1" vertex="1">
+          <mxGeometry x="770" y="620" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="btn_volver_prod" value="◄ Volver" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d3d3d3;strokeColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="865" y="620" width="75" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="label_detalles_prod" value="Detalles del Producto" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="580" y="670" width="150" height="15" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="detalles_prod" value="ID: [ ]  Nombre: [ ]&#10;Precio: [ ]  Stock: [ ]&#10;Descripción: [ Área de texto ]" style="text;html=1;strokeColor=#999999;fillColor=#f9f9f9;align=left;fontSize=9;border=1;" parent="1" vertex="1">
+          <mxGeometry x="580" y="690" width="390" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Flechas de Flujo -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 4;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="220" as="sourcePoint" />
+            <mxPoint x="380" y="220" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label_arrow1" value="Cajero" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" parent="arrow1" vertex="1" connectable="0">
+          <mxGeometry x="0" y="-10" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 4;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="220" as="sourcePoint" />
+            <mxPoint x="710" y="220" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label_arrow2" value="Admin" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" parent="arrow2" vertex="1" connectable="0">
+          <mxGeometry x="0" y="-10" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 4;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="130" as="sourcePoint" />
+            <mxPoint x="50" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="380" />
+              <mxPoint x="50" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label_arrow3" value="Nueva Venta" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="arrow3" vertex="1" connectable="0">
+          <mxGeometry x="0" y="-10" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=1 4;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="130" as="sourcePoint" />
+            <mxPoint x="560" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="380" />
+              <mxPoint x="560" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="label_arrow4" value="Gestionar Prod." style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="arrow4" vertex="1" connectable="0">
+          <mxGeometry x="0" y="-10" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Leyenda -->
+        <mxCell id="legend" value="LEYENDA: ═══════════════════════════════════════════&#10;🟦 Púrpura: Login (Acceso)  │  🟩 Verde: Menú Cajero  │  🟧 Naranja: Menú Admin&#10;🟨 Amarillo: Ventas  │  🟪 Violeta: Gestión de Productos" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=9;border=1;borderColor=#999999;" parent="1" vertex="1">
+          <mxGeometry x="50" y="775" width="940" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

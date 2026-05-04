@@ -1,0 +1,247 @@
+<mxfile host="65bd71144e">
+    <diagram name="Clases de Interfaz - Sistema POS" id="clases-interfaz-pos">
+        <mxGraphModel dx="1004" dy="593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="package" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="10" width="1480" height="1010" as="geometry"/>
+                </mxCell>
+                <mxCell id="titulo" value="CLASES DE INTERFAZ - SISTEMA POS (IH)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="30" width="1480" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="principal_clase" value="PrincipalIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="80" width="280" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="principal_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="principal_clase" vertex="1">
+                    <mxGeometry y="40" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="principal_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="principal_clase" vertex="1">
+                    <mxGeometry y="60" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="principal_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+MostrarMenu()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=10;fontFamily=Courier New;" parent="principal_clase" vertex="1">
+                    <mxGeometry y="61" width="280" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_clase" value="LoginIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="80" width="300" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="login_clase" vertex="1">
+                    <mxGeometry y="40" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_atributos" value="-Usuario: Usuario&#xa;-TipoUsuario: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="login_clase" vertex="1">
+                    <mxGeometry y="60" width="300" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="login_clase" vertex="1">
+                    <mxGeometry y="100" width="300" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="login_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+ValidarCredenciales()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="login_clase" vertex="1">
+                    <mxGeometry y="101" width="300" height="69" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_cajero_clase" value="MenuCajeroIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="80" width="280" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_cajero_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="menu_cajero_clase" vertex="1">
+                    <mxGeometry y="40" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_cajero_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="menu_cajero_clase" vertex="1">
+                    <mxGeometry y="60" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_cajero_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+AbrirVenta()&#xa;+ConsultarPrecios()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="menu_cajero_clase" vertex="1">
+                    <mxGeometry y="61" width="280" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_admin_clase" value="MenuAdminIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="80" width="280" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_admin_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="menu_admin_clase" vertex="1">
+                    <mxGeometry y="40" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_admin_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="menu_admin_clase" vertex="1">
+                    <mxGeometry y="60" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="menu_admin_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+AbrirProductos()&#xa;+AbrirUsuarios()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="menu_admin_clase" vertex="1">
+                    <mxGeometry y="61" width="280" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="venta_clase" value="RegistroVentaIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="280" width="320" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="venta_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="venta_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="venta_atributos" value="-Venta: Venta&#xa;-DetalleVenta: DetalleVenta[]&#xa;-Producto: Producto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="venta_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="venta_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="venta_clase" vertex="1">
+                    <mxGeometry y="110" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="venta_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+AgregarProducto()&#xa;+CalcularTotal()&#xa;+ProcesarPago()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="venta_clase" vertex="1">
+                    <mxGeometry y="111" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_prod_clase" value="AltaProductoIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="280" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_prod_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="alta_prod_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_prod_atributos" value="-Producto: Producto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="alta_prod_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_prod_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="alta_prod_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_prod_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+ValidarProducto()&#xa;+GuardarProducto()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="alta_prod_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_prod_clase" value="ModificarProductoIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="280" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_prod_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="mod_prod_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_prod_atributos" value="-Producto: Producto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="mod_prod_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_prod_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="mod_prod_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_prod_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+ValidarProducto()&#xa;+ActualizarProducto()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="mod_prod_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_prod_clase" value="VerProductosIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="280" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_prod_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="ver_prod_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_prod_atributos" value="-Producto: Producto[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ver_prod_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_prod_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="ver_prod_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_prod_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CargarProductos()&#xa;+BuscarProducto()&#xa;+MostrarDetalle()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ver_prod_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_user_clase" value="AltaUsuarioIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="530" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_user_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="alta_user_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_user_atributos" value="-Usuario: Usuario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="alta_user_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_user_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="alta_user_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="alta_user_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+ValidarUsuario()&#xa;+GuardarUsuario()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="alta_user_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_user_clase" value="ModificarUsuarioIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="530" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_user_estereotipo" value="&lt;&lt;Forma de entrada&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="mod_user_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_user_atributos" value="-Usuario: Usuario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="mod_user_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_user_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="mod_user_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_user_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CapturarDatos()&#xa;+ValidarUsuario()&#xa;+ActualizarUsuario()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="mod_user_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_user_clase" value="VerUsuariosIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="530" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_user_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="ver_user_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_user_atributos" value="-Usuario: Usuario[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ver_user_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_user_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="ver_user_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ver_user_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CargarUsuarios()&#xa;+BuscarUsuario()&#xa;+MostrarDetalle()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ver_user_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="89" as="geometry"/>
+                </mxCell>
+                <mxCell id="elim_user_clase" value="EliminarUsuarioIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="530" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="elim_user_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="elim_user_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elim_user_atributos" value="-Usuario: Usuario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="elim_user_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elim_user_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="elim_user_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elim_user_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+ConfirmarEliminacion()&#xa;+EliminarUsuario()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="elim_user_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes_clase" value="ReportesIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="780" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="reportes_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes_atributos" value="-Venta: Venta[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="reportes_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="reportes_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="reportes_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CargarReportes()&#xa;+GenerarGrafico()&#xa;+Exportar()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="reportes_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticket_clase" value="GenerarTicketIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="780" width="320" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticket_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="ticket_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticket_atributos" value="-Venta: Venta&#xa;-DetalleVenta: DetalleVenta[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ticket_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticket_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="ticket_clase" vertex="1">
+                    <mxGeometry y="100" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticket_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+MostrarTicket()&#xa;+Imprimir()&#xa;+Cerrar()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="ticket_clase" vertex="1">
+                    <mxGeometry y="101" width="320" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="consulta_precio_clase" value="ConsultarPreciosIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="780" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="consulta_precio_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="consulta_precio_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="consulta_precio_atributos" value="-Producto: Producto[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="consulta_precio_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="consulta_precio_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="consulta_precio_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="consulta_precio_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+BuscarProducto()&#xa;+MostrarPrecio()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="consulta_precio_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="inventario_clase" value="ControlInventarioIH" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="780" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="inventario_estereotipo" value="&lt;&lt;Pantalla&gt;&gt;" style="text;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=1;" parent="inventario_clase" vertex="1">
+                    <mxGeometry y="40" width="320" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="inventario_atributos" value="-Producto: Producto[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="inventario_clase" vertex="1">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="inventario_divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;deletable=0;editable=0;connectable=0;" parent="inventario_clase" vertex="1">
+                    <mxGeometry y="90" width="320" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inventario_metodos" value="+Abrir()&#xa;+Maximizar()&#xa;+Minimizar()&#xa;+Cerrar()&#xa;+CargarInventario()&#xa;+AlertasStock()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;fontSize=9;fontFamily=Courier New;" parent="inventario_clase" vertex="1">
+                    <mxGeometry y="91" width="320" height="79" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
