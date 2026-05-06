@@ -1,0 +1,399 @@
+<mxfile host="65bd71144e">
+    <diagram name="Cajero_RealizarVenta" id="diagram-venta-cajero">
+        <mxGraphModel dx="1609" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="-80" y="335" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_start_principal" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="start" target="principal" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-20" y="365" as="sourcePoint"/>
+                        <mxPoint y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="principal" value="Pantalla Principal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="-10" y="320" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_principal_venta" value="Seleccionar Venta" style="endArrow=classic;html=1;rounded=0;" parent="1" source="principal" target="venta_activa" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="230" y="365" as="sourcePoint"/>
+                        <mxPoint x="280" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="k3nW7NTUD_H2HxDbZBmr-2" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="pago" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="349.1700000000001" as="sourcePoint"/>
+                        <mxPoint x="780" y="349.1700000000001" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="venta_activa" value="Venta Activa&#xa;(Agregando productos)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="320" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_venta_confirmar" value="Confirmar venta" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="venta_activa" target="k3nW7NTUD_H2HxDbZBmr-1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="440" y="350" as="sourcePoint"/>
+                        <mxPoint x="520" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pago" value="Procesar Pago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="320" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_pago_ticket" value="Pago exitoso" style="endArrow=classic;html=1;rounded=0;" parent="1" source="pago" target="ticket" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="930" y="350" as="sourcePoint"/>
+                        <mxPoint x="980" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ticket" value="Imprimir Ticket" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1070" y="320" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_ticket_end" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="ticket" target="end" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1060" y="350" as="sourcePoint"/>
+                        <mxPoint x="1100" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1260" y="335" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_inner" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1265" y="340" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_pago_fallo" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.547;exitY=0.985;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="pago" target="k3nW7NTUD_H2HxDbZBmr-1" edge="1">
+                    <mxGeometry x="0.1906" y="50" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="650" y="410" as="sourcePoint"/>
+                        <mxPoint x="600" y="410" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="878" y="420"/>
+                            <mxPoint x="610" y="420"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F3ocDsCPCG7rVUafP422-12" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Pago fallido&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="trans_pago_fallo" vertex="1" connectable="0">
+                    <mxGeometry x="-0.196" y="1" relative="1" as="geometry">
+                        <mxPoint x="-51" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F3ocDsCPCG7rVUafP422-1" value="Agregar producto" style="endArrow=classic;html=1;rounded=0;curved=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="venta_activa" target="venta_activa" edge="1">
+                    <mxGeometry x="-0.3966" y="14" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="610" y="240" as="sourcePoint"/>
+                        <mxPoint x="320" y="260" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="390" y="160"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F3ocDsCPCG7rVUafP422-3" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="start" target="start" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="k3nW7NTUD_H2HxDbZBmr-3" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k3nW7NTUD_H2HxDbZBmr-1" target="ticket" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="610" y="240"/>
+                            <mxPoint x="1140" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="k3nW7NTUD_H2HxDbZBmr-4" value="Cancelar venta" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="k3nW7NTUD_H2HxDbZBmr-3" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0299" relative="1" as="geometry">
+                        <mxPoint x="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="k3nW7NTUD_H2HxDbZBmr-1" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Venta Activa&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;(Metodo pago)&lt;/span&gt;" style="whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;rounded=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Cajero_EliminarProducto" id="diagram-eliminar-cajero">
+        <mxGraphModel dx="592" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_start_principal" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="start" target="principal" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="270" y="360" as="sourcePoint"/>
+                        <mxPoint x="290" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="principal" value="Pantalla Principal&#xa;(Cajero)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_principal_lista" value="Seleccionar Eliminar Producto" style="endArrow=classic;html=1;rounded=0;" parent="1" source="principal" target="lista" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="430" y="360" as="sourcePoint"/>
+                        <mxPoint x="480" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lista" value="Lista de Productos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="330" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_lista_seleccion" value="Seleccionar producto" style="endArrow=classic;html=1;rounded=0;" parent="1" source="lista" target="confirmar" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="620" y="360" as="sourcePoint"/>
+                        <mxPoint x="670" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="confirmar" value="Confirmar Eliminación" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="330" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_confirmar_si" value="Aceptar" style="endArrow=classic;html=1;rounded=0;" parent="1" source="confirmar" target="eliminado" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="820" y="360" as="sourcePoint"/>
+                        <mxPoint x="870" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="eliminado" value="Producto Eliminado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="330" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_eliminado_end" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="eliminado" target="end" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1100" y="360" as="sourcePoint"/>
+                        <mxPoint x="1140" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1140" y="345" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_inner" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;rotation=-225;" parent="1" vertex="1">
+                    <mxGeometry x="1145" y="350" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_confirmar_cancel" value="Cancelar" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="confirmar" target="principal" edge="1">
+                    <mxGeometry x="-0.0141" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="745" y="415" as="sourcePoint"/>
+                        <mxPoint x="360" y="415" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="795" y="455"/>
+                            <mxPoint x="160" y="455"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Admin_AltaUsuario" id="diagram-alta-admin">
+        <mxGraphModel dx="1796" dy="368" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_start_principal" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="start" target="principal" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-40" y="365" as="sourcePoint"/>
+                        <mxPoint x="-20" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="principal" value="Pantalla Principal&#xa;(Administrador)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="-20" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_principal_form" value="Seleccionar Alta Usuario" style="endArrow=classic;html=1;rounded=0;" parent="1" source="principal" target="form" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="365" as="sourcePoint"/>
+                        <mxPoint x="300" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="form" value="Formulario de Usuario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_form_validar" value="Completar datos" style="endArrow=classic;html=1;rounded=0;" parent="1" source="form" target="validar" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="460" y="365" as="sourcePoint"/>
+                        <mxPoint x="510" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="validar" value="Validar Datos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_validar_guardar" value="Datos válidos" style="endArrow=classic;html=1;rounded=0;" parent="1" source="validar" target="guardar" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="650" y="365" as="sourcePoint"/>
+                        <mxPoint x="700" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="guardar" value="Guardar Usuario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_guardar_end" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="guardar" target="end" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="840" y="365" as="sourcePoint"/>
+                        <mxPoint x="880" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_inner" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="975" y="355" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_validar_invalido" value="Datos inválidos" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="validar" target="form" edge="1">
+                    <mxGeometry x="-0.2" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="580" y="420" as="sourcePoint"/>
+                        <mxPoint x="380" y="420" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="640" y="460"/>
+                            <mxPoint x="380" y="460"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Admin_AltaProducto" id="diagram-alta-producto-admin">
+        <mxGraphModel dx="509" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_start_principal" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="start" target="principal" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="70" y="365" as="sourcePoint"/>
+                        <mxPoint x="90" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="principal" value="Pantalla Principal&#xa;(Administrador)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_principal_form" value="Seleccionar Alta Producto" style="endArrow=classic;html=1;rounded=0;" parent="1" source="principal" target="form" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="365" as="sourcePoint"/>
+                        <mxPoint x="300" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="form" value="Formulario de Producto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_form_validar" value="Completar datos" style="endArrow=classic;html=1;rounded=0;" parent="1" source="form" target="validar" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="590" y="365" as="sourcePoint"/>
+                        <mxPoint x="640" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="validar" value="Validar Producto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_validar_guardar" value="Datos válidos" style="endArrow=classic;html=1;rounded=0;" parent="1" source="validar" target="guardar" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="840" y="365" as="sourcePoint"/>
+                        <mxPoint x="890" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="guardar" value="Guardar Producto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_guardar_end" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="guardar" target="end" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1090" y="365" as="sourcePoint"/>
+                        <mxPoint x="1130" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1130" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_inner" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1135" y="355" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_validar_invalido" value="Datos inválidos" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="validar" target="form" edge="1">
+                    <mxGeometry x="-0.2" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="710" y="420" as="sourcePoint"/>
+                        <mxPoint x="510" y="420" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="770" y="460"/>
+                            <mxPoint x="510" y="460"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="RealizarCompra_Cliente" id="diagram-compra-cliente">
+        <mxGraphModel dx="509" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_start_principal" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="start" target="catalogo" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="70" y="365" as="sourcePoint"/>
+                        <mxPoint x="90" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="catalogo" value="Catálogo de Productos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="335" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_catalogo_carrito" value="Agregar al carrito" style="endArrow=classic;html=1;rounded=0;" parent="1" source="catalogo" target="carrito" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="240" y="365" as="sourcePoint"/>
+                        <mxPoint x="290" y="365" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="trans_carrito_agregar" value="Agregar más productos" style="endArrow=classic;html=1;rounded=0;curved=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="carrito" target="carrito" edge="1">
+                    <mxGeometry x="0.3062" y="7" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="290" as="sourcePoint"/>
+                        <mxPoint x="480" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="470" y="220"/>
+                        </Array>
+                        <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="carrito" value="Carrito de Compras" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_carrito_pago" value="Proceder al pago" style="endArrow=classic;html=1;rounded=0;" parent="1" source="carrito" target="pago" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="540" y="350" as="sourcePoint"/>
+                        <mxPoint x="590" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pago" value="Realizar Pago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="335" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_pago_confirmar" value="Pago exitoso" style="endArrow=classic;html=1;rounded=0;" parent="1" source="pago" target="confirmacion" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="810" y="350" as="sourcePoint"/>
+                        <mxPoint x="860" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="confirmacion" value="Confirmación de Compra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="335" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_confirmacion_end" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="confirmacion" target="end" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1090" y="350" as="sourcePoint"/>
+                        <mxPoint x="1130" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1130" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_inner" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1135" y="355" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_pago_fallo" value="Pago fallido" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="pago" target="carrito" edge="1">
+                    <mxGeometry x="-0.2" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="660" y="400" as="sourcePoint"/>
+                        <mxPoint x="460" y="400" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="740" y="450"/>
+                            <mxPoint x="460" y="450"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
