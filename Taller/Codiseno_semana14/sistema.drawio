@@ -1,0 +1,53 @@
+<mxfile host="65bd71144e">
+    <diagram name="Arquitectura Sistema Embebido" id="0">
+        <mxGraphModel dx="120729" dy="66019" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Wifi || Bluetooth&lt;span style=&quot;color: rgb(63, 63, 63); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&amp;nbsp;&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="10">
+                    <mxGeometry x="-0.0621" y="3" relative="1" as="geometry">
+                        <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="175" width="575" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="sensor" value="Sensor Ultrasonico&#xa;(HC-SR04)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" parent="1" vertex="1">
+                    <mxGeometry x="275" y="215" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="driver" value="Driver Motores&#xa;(L298N)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" parent="1" vertex="1">
+                    <mxGeometry x="55" y="215" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="motores" value="Motores DC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" parent="1" vertex="1">
+                    <mxGeometry x="55" y="315" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="camara" value="Camara" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" parent="1" vertex="1">
+                    <mxGeometry x="285" y="315" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" value="Trigger/Echo" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="sensor" target="arduino" edge="1"/>
+                <mxCell id="e2" value="PWM/Control" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="arduino" target="driver" edge="1"/>
+                <mxCell id="e3" value="Potencia" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="driver" target="motores" edge="1"/>
+                <mxCell id="e4" value="Serial (USB/Bluetooth)" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="arduino" target="pc" edge="1"/>
+                <mxCell id="e5" value="Video" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="camara" target="pc" edge="1"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;" vertex="1" parent="1">
+                    <mxGeometry x="-30" y="530" width="575" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Python&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="570" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;OpenCV&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+                    <mxGeometry x="285" y="570" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Arduino" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-15" y="175" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Computadora" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-35" y="530" width="100" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
