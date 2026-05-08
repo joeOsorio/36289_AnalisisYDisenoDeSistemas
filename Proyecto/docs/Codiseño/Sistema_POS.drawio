@@ -1,0 +1,51 @@
+<mxfile host="65bd71144e">
+    <diagram name="Arquitectura POS Codiseño" id="0">
+        <mxGraphModel dx="1012" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="USUARIO (CAJERO)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="250" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SOFTWARE: Aplicación Java (Swing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="240" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="HARDWARE: Escáner de Barras" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="90" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="BASE DE DATOS: MySQL" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="230" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="HARDWARE: Impresora Térmica" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="410" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Cajón de Dinero" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="520" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" parent="1" source="4" target="3" edge="1">
+                    <mxGeometry value="Código Producto" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry value="SQL Query" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" parent="1" source="3" target="6" edge="1">
+                    <mxGeometry value="ESC/POS Command" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" parent="1" source="6" target="7" edge="1">
+                    <mxGeometry value="Pulso RJ11" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="13" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="HARDWARE: Monitor / Pantalla tactil" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="250" width="160" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
