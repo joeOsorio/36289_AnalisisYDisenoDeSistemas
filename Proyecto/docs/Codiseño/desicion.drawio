@@ -1,0 +1,71 @@
+<mxfile host="65bd71144e">
+    <diagram name="Flujo POS Joshua Osorio" id="0">
+        <mxGraphModel dx="1249" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="step1" value="Inicio de Venta" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="step2" value="Escanear Producto" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="140" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step3" target="step2">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="280"/>
+                            <mxPoint x="560" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="step3" value="¿Existe en DB?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="240" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="step4" value="Sumar a Venta" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step5" target="step2">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="240" y="520"/>
+                            <mxPoint x="240" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="step5" value="¿Cobrar ahora?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" parent="1" vertex="1">
+                    <mxGeometry x="355" y="480" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="step6" value="Procesar Pago" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="610" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="step7" value="Imprimir Ticket y Abrir Cajón" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="720" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="step8" value="Fin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="830" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line1" parent="1" source="step1" target="step2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line2" parent="1" source="step2" target="step3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line3" parent="1" source="step3" target="step4" edge="1">
+                    <mxGeometry value="SÍ" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line4" parent="1" source="step4" target="step5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line5" parent="1" source="step5" target="step6" edge="1">
+                    <mxGeometry value="SÍ" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line6" parent="1" source="step6" target="step7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="line7" parent="1" source="step7" target="step8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
