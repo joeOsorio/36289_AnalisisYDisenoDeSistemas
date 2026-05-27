@@ -1,0 +1,905 @@
+\documentclass[12pt,a4paper]{report}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{parskip}
+
+\geometry{margin=2.5cm}
+\setstretch{1.5}
+
+% Configuración de listings para SQL
+\lstset{
+    language=SQL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    backgroundcolor=\color{gray!10},
+    captionpos=b
+}
+
+% =========================
+% DATOS DEL DOCUMENTO
+% =========================
+\title{Documentación Final -- NexoPay\\Sistema Punto de Venta (POS)}
+\author{
+    Joshua Osorio O. \\
+    Andrés Eduardo Fabara C.
+}
+\date{\today}
+
+% =========================
+% INICIO DEL DOCUMENTO
+% =========================
+\begin{document}
+
+% ==================================================
+% PORTADA
+% ==================================================
+\begin{titlepage}
+    \centering
+
+    \vspace*{1cm}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{Imagenes/Logos/NexoPay.png}
+    \end{figure}
+
+    \vspace{0.5cm}
+
+    {\Large \textbf{Universidad Autónoma de Baja California}}\\[0.3cm]
+    {\large Facultad de Ciencias Químicas e Ingeniería}\\[1.5cm]
+
+    {\Large \textbf{Programación Orientada a Objetos}}\\[1cm]
+
+    {\Huge \textbf{NexoPay}}\\[0.4cm]
+    {\Large Sistema Punto de Venta (POS)}\\[0.3cm]
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Imagenes/Logos/NexoPay_Eslogan.png}
+    \end{figure}
+
+    \vspace{1cm}
+
+    \textbf{Equipo e Integrantes:}\\[0.4cm]
+    Joshua Osorio O.\\
+    Andrés Eduardo Fabara C.\\[1cm]
+
+    \textbf{Docente:}\\
+    Fernando E. Saucedo L.\\[1cm]
+
+    \textbf{Fecha de Entrega:}\\
+    \today
+
+    \vfill
+\end{titlepage}
+
+% ==================================================
+% ÍNDICES
+% ==================================================
+\tableofcontents
+\newpage
+
+\listoftables
+\newpage
+
+\listoffigures
+\newpage
+
+% ==================================================
+% CAPÍTULO 1: INTRODUCCIÓN
+% ==================================================
+\chapter{Introducción}
+
+\section{Descripción General del Sistema}
+
+NexoPay es un sistema de Punto de Venta (POS, por sus siglas en inglés \textit{Point of Sale}) diseñado para automatizar y centralizar las operaciones comerciales de pequeños y medianos negocios. El sistema integra en una sola plataforma las funciones de registro de ventas, gestión de inventario, administración de usuarios y generación de reportes, eliminando la necesidad de procesos manuales que son propensos a errores.
+
+El sistema está compuesto por tres módulos principales que trabajan de forma coordinada: el módulo de ventas, que permite al cajero registrar transacciones de manera ágil; el módulo administrativo, que otorga al administrador control total sobre productos, usuarios e inventario; y el módulo de reportes, que facilita la toma de decisiones basadas en datos históricos de ventas.
+
+NexoPay opera como una aplicación de escritorio desarrollada en Java, con almacenamiento en base de datos relacional (MySQL o SQLite), lo que garantiza la persistencia e integridad de la información. La interfaz gráfica está construida con la biblioteca Swing, ofreciendo una experiencia de usuario clara e intuitiva adaptada al flujo de trabajo de un punto de venta real.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DrigramasDeInterfaz/Interfaz.png}
+    \caption{Vista general de la interfaz principal del sistema NexoPay}
+    \label{fig:interfaz_principal}
+\end{figure}
+
+\section{Importancia y Relevancia del Sistema}
+
+En el contexto actual, la digitalización de los procesos comerciales es una necesidad fundamental para cualquier negocio que busque competir en el mercado. Un sistema POS como NexoPay responde directamente a esta necesidad al proporcionar:
+
+\begin{itemize}
+    \item \textbf{Eficiencia operativa:} La automatización del proceso de ventas reduce considerablemente el tiempo de atención al cliente y minimiza los errores en el cálculo de totales y el manejo de cambios.
+    \item \textbf{Control de inventario en tiempo real:} Cada venta registrada actualiza automáticamente el stock disponible, permitiendo al administrador conocer en todo momento el estado del inventario y tomar decisiones oportunas de reabastecimiento.
+    \item \textbf{Trazabilidad de operaciones:} Toda transacción queda registrada en la base de datos, lo que permite auditar el historial de ventas y detectar inconsistencias o irregularidades.
+    \item \textbf{Toma de decisiones basada en datos:} Los reportes generados por el sistema ofrecen información valiosa sobre el comportamiento de las ventas, los productos más vendidos y el desempeño del negocio.
+    \item \textbf{Seguridad por roles:} El sistema implementa control de acceso diferenciado, asegurando que cada usuario únicamente pueda ejecutar las acciones que le corresponden según su rol.
+\end{itemize}
+
+Desde una perspectiva académica, NexoPay representa la aplicación práctica de los principios de la Programación Orientada a Objetos (POO), demostrando cómo conceptos como herencia, encapsulamiento y polimorfismo se traducen en soluciones de software funcionales y organizadas.
+
+\section{Objetivo General}
+
+Desarrollar un sistema POS funcional, organizado y correctamente estructurado en Java, aplicando los principios fundamentales de la Programación Orientada a Objetos, que permita gestionar las operaciones de ventas, inventario y administración de un pequeño o mediano comercio de manera eficiente, confiable y fácil de mantener.
+
+\section{Objetivos Específicos}
+
+\begin{itemize}
+    \item Implementar un sistema de autenticación por roles que diferencie las acciones disponibles para el cajero y el administrador, garantizando la seguridad y el control de acceso al sistema.
+    \item Diseñar e implementar el módulo de ventas que permita al cajero seleccionar productos, calcular totales automáticamente, procesar pagos y generar tickets de compra.
+    \item Construir el módulo de gestión de productos e inventario que permita al administrador realizar altas, bajas, modificaciones y consultas, manteniendo el stock actualizado tras cada transacción.
+    \item Desarrollar el módulo de gestión de usuarios y clientes, permitiendo al administrador registrar, modificar y consultar la información de cajeros y clientes del sistema.
+    \item Implementar el módulo de reportes que consolide la información de ventas y presente al administrador estadísticas útiles para la toma de decisiones.
+    \item Aplicar correctamente los conceptos de herencia, encapsulamiento y polimorfismo en la estructuración de las clases del sistema, manteniendo un código limpio, modular y bien documentado.
+    \item Integrar el sistema con una base de datos relacional mediante consultas SQL, garantizando la persistencia y consistencia de todos los datos generados por las operaciones del negocio.
+\end{itemize}
+
+% ==================================================
+% CAPÍTULO 2: JUSTIFICACIÓN
+% ==================================================
+\chapter{Justificación}
+
+\section{Razones de Selección del Proyecto}
+
+La selección de un sistema POS como proyecto académico responde a múltiples criterios que lo convierten en un caso de estudio ideal para la materia de Programación Orientada a Objetos:
+
+\textbf{Aplicabilidad real:} Los sistemas POS son utilizados diariamente por miles de negocios en México y el mundo. Desarrollar uno desde cero permite comprender cómo el software que se estudia en el aula tiene un impacto directo y tangible en la vida cotidiana. Esta conexión con la realidad aumenta la motivación y facilita la comprensión de los conceptos.
+
+\textbf{Riqueza en conceptos de POO:} El dominio del problema de un punto de venta involucra naturalmente entidades como \texttt{Usuario}, \texttt{Producto}, \texttt{Venta}, \texttt{Cliente} y \texttt{Pago}, que se relacionan entre sí de formas complejas. Esta riqueza de relaciones permite practicar herencia (por ejemplo, \texttt{Cajero} y \texttt{Administrador} como subclases de \texttt{Usuario}), encapsulamiento (atributos privados con accesores y mutadores), y polimorfismo (comportamientos distintos según el tipo de usuario).
+
+\textbf{Complejidad adecuada:} El proyecto tiene una complejidad suficiente para representar un desafío significativo de diseño y programación, sin llegar a ser inabordable para estudiantes universitarios. Permite practicar la descomposición de un problema real en módulos manejables.
+
+\textbf{Integración de múltiples áreas:} El desarrollo del sistema requiere aplicar conocimientos de bases de datos (SQL), interfaces gráficas (Swing), manejo de archivos y lógica de negocio, lo que lo convierte en un proyecto integrador que pone en práctica competencias de diversas áreas de la ingeniería en computación.
+
+\textbf{Relevancia para el mercado laboral:} El desarrollo de sistemas transaccionales es una de las actividades más demandadas en la industria del software. Haber desarrollado un sistema POS proporciona una experiencia concreta y demostrable que enriquece el perfil profesional de los estudiantes.
+
+\section{Beneficios Esperados}
+
+Los beneficios del proyecto NexoPay se pueden analizar desde dos perspectivas complementarias:
+
+\textbf{Beneficios académicos:}
+\begin{itemize}
+    \item Consolidación de los conceptos fundamentales de POO mediante su aplicación en un proyecto real y funcional.
+    \item Desarrollo de habilidades de diseño de software: análisis de requerimientos, modelado UML, diseño de clases y arquitectura de capas.
+    \item Práctica en el uso de herramientas profesionales como IDEs, sistemas de control de versiones y gestores de bases de datos.
+    \item Experiencia en el trabajo en equipo, la distribución de responsabilidades y la coordinación del desarrollo.
+\end{itemize}
+
+\textbf{Beneficios prácticos del sistema:}
+\begin{itemize}
+    \item Reducción del tiempo de atención al cliente en el punto de venta mediante la automatización del registro de ventas y el cálculo de totales.
+    \item Eliminación de errores humanos frecuentes en el manejo de efectivo y el cálculo de cambios.
+    \item Visibilidad en tiempo real del inventario, reduciendo el riesgo de quedarse sin stock de productos clave.
+    \item Generación de reportes que permiten identificar tendencias de ventas y optimizar la gestión del negocio.
+    \item Centralización de la información en una base de datos estructurada, facilitando la recuperación y el análisis de datos históricos.
+\end{itemize}
+
+% ==================================================
+% CAPÍTULO 3: DESARROLLO
+% ==================================================
+\chapter{Desarrollo}
+
+% --------------------------------------------------
+\section{Fundamentos del Análisis y Diseño de Sistemas}
+% --------------------------------------------------
+
+\subsection{Descripción del Problema y Objetivos del Sistema}
+
+Los pequeños y medianos comercios enfrentan frecuentemente problemas de gestión derivados de la ausencia de herramientas digitales: registros de ventas imprecisos, dificultad para conocer el estado real del inventario, falta de información consolidada para la toma de decisiones y dependencia de procesos manuales que son lentos y propensos a errores. Esta situación limita la eficiencia operativa y dificulta el crecimiento del negocio.
+
+NexoPay surge como respuesta a esta problemática. El sistema automatiza el proceso de ventas, garantizando que cada transacción quede registrada con precisión, que el inventario se actualice de forma inmediata y que la información esté siempre disponible para quien la necesite. El objetivo central es transformar un proceso comercial manual y disperso en un flujo de trabajo digital, centralizado y confiable.
+
+Desde el punto de vista técnico, el problema se traduce en la necesidad de diseñar un sistema que:
+\begin{itemize}
+    \item Gestione la autenticación y el control de acceso por roles de usuario.
+    \item Registre y almacene transacciones de venta de forma persistente.
+    \item Mantenga la consistencia del inventario ante cualquier operación de venta.
+    \item Proporcione información organizada a través de reportes.
+    \item Sea fácil de usar, mantener y extender por parte de desarrolladores futuros.
+\end{itemize}
+
+\subsection{Identificación de Actores y Partes Interesadas}
+
+El sistema NexoPay involucra a los siguientes actores y partes interesadas:
+
+\begin{table}[H]
+\centering
+\caption{Actores y partes interesadas del sistema NexoPay}
+\label{tab:actores}
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Actor} & \textbf{Descripción} & \textbf{Funciones Principales} \\ \hline
+Cajero & Usuario operativo encargado del registro de ventas en el mostrador & Iniciar sesión, registrar ventas, seleccionar productos, generar tickets, finalizar transacciones \\ \hline
+Administrador & Usuario con control total del sistema y acceso a todas las funciones & Gestionar productos, usuarios, inventario y clientes; consultar reportes; supervisar operaciones \\ \hline
+Cliente & Usuario externo que realiza compras en el negocio & Solicitar productos, realizar pagos, recibir ticket de compra \\ \hline
+Base de datos & Componente técnico que almacena y provee información & Persistir ventas, productos, usuarios, inventario y reportes \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Recolección y Análisis de Requerimientos}
+
+\subsubsection{Requerimientos Funcionales}
+
+Los requerimientos funcionales describen las capacidades que el sistema debe ofrecer para satisfacer las necesidades de los usuarios:
+
+\begin{table}[H]
+\centering
+\caption{Requerimientos funcionales del sistema}
+\label{tab:req_funcionales}
+\begin{tabular}{|c|p{4cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Requerimiento} & \textbf{Descripción} \\ \hline
+RF-01 & Autenticación de usuarios & El sistema debe autenticar a los usuarios mediante nombre de usuario y contraseña, controlando el acceso según el rol asignado \\ \hline
+RF-02 & Registro de ventas & El cajero debe poder registrar los productos seleccionados por el cliente, calcular el total y procesar el pago \\ \hline
+RF-03 & Gestión de productos & El administrador debe poder dar de alta, modificar, consultar y eliminar productos del catálogo \\ \hline
+RF-04 & Control de inventario & El sistema debe actualizar automáticamente el stock disponible tras cada venta registrada \\ \hline
+RF-05 & Generación de tickets & El sistema debe generar un comprobante de compra con los detalles de la transacción \\ \hline
+RF-06 & Gestión de usuarios & El administrador debe poder crear, modificar, consultar y eliminar cuentas de usuario \\ \hline
+RF-07 & Gestión de clientes & El administrador debe poder registrar, modificar y consultar la información de los clientes \\ \hline
+RF-08 & Consulta de reportes & El administrador debe poder consultar reportes de ventas que resuman la actividad comercial \\ \hline
+RF-09 & Métodos de pago & El sistema debe soportar pagos en efectivo y con tarjeta de débito o crédito \\ \hline
+RF-10 & Propinas en ticket & El cliente debe poder añadir una propina al momento del pago \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Requerimientos No Funcionales}
+
+Los requerimientos no funcionales definen las características de calidad que el sistema debe cumplir:
+
+\begin{table}[H]
+\centering
+\caption{Requerimientos no funcionales del sistema}
+\label{tab:req_no_funcionales}
+\begin{tabular}{|c|p{3.5cm}|p{8.5cm}|}
+\hline
+\textbf{ID} & \textbf{Requerimiento} & \textbf{Descripción} \\ \hline
+RNF-01 & Lenguaje de programación & El sistema debe desarrollarse en Java, aplicando correctamente los principios de POO \\ \hline
+RNF-02 & Interfaz gráfica & La interfaz debe implementarse con la biblioteca Swing de Java \\ \hline
+RNF-03 & Base de datos & El sistema debe utilizar MySQL o SQLite para la persistencia de datos \\ \hline
+RNF-04 & Plataforma & El sistema debe operar como aplicación de escritorio \\ \hline
+RNF-05 & Seguridad & El acceso al sistema debe requerir autenticación obligatoria; cada rol únicamente puede acceder a las funciones que le corresponden \\ \hline
+RNF-06 & Integridad de datos & El inventario no puede resultar negativo; cada venta debe registrarse obligatoriamente \\ \hline
+RNF-07 & Usabilidad & La interfaz debe ser intuitiva y de fácil uso para usuarios sin formación técnica \\ \hline
+RNF-08 & Mantenibilidad & El código debe estar organizado en capas y módulos claramente diferenciados, con comentarios útiles \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Principales Metodologías Aplicadas en el Análisis y Diseño}
+
+Para el desarrollo de NexoPay se aplicaron las siguientes metodologías y técnicas:
+
+\textbf{Análisis estructurado orientado a objetos:} Se identificaron las entidades principales del dominio del problema (productos, ventas, usuarios, clientes) y sus relaciones, como punto de partida para el diseño de las clases del sistema.
+
+\textbf{Modelado con UML (Lenguaje Unificado de Modelado):} Se elaboraron diagramas de casos de uso, clases, secuencia y estados para documentar los requerimientos, el diseño y el comportamiento dinámico del sistema, proporcionando una visión completa y estructurada del software.
+
+\textbf{Diseño por capas:} La arquitectura del sistema se organizó en capas separadas (modelos, servicios, controladores, vistas, datos y utilidades), siguiendo el principio de separación de responsabilidades para facilitar el mantenimiento y la extensión del sistema.
+
+\textbf{Pruebas de caja negra y tablas de decisión:} Se definió un plan de pruebas que verifica el comportamiento del sistema a partir de entradas y salidas esperadas, sin conocer la implementación interna, garantizando que los flujos principales y los casos de error se manejen correctamente.
+
+% --------------------------------------------------
+\section{Lenguaje Unificado de Modelado (UML)}
+% --------------------------------------------------
+
+\subsection{Diagramas de Casos de Uso}
+
+Los diagramas de casos de uso describen las interacciones entre los actores del sistema y las funcionalidades que este ofrece. NexoPay cuenta con tres diagramas principales, uno por cada actor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasCasoUso/FuncionesCajero.png}
+    \caption{Diagrama de casos de uso -- Cajero}
+    \label{fig:cu_cajero}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasCasoUso/FuncionesAdministrador.png}
+    \caption{Diagrama de casos de uso -- Administrador}
+    \label{fig:cu_administrador}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasCasoUso/FuncionesCliente.png}
+    \caption{Diagrama de casos de uso -- Cliente}
+    \label{fig:cu_cliente}
+\end{figure}
+
+El \textbf{Cajero} (figura \ref{fig:cu_cajero}) tiene acceso a las funciones operativas del punto de venta: iniciar sesión, registrar ventas, seleccionar productos, consultar precios, generar tickets y finalizar transacciones. No tiene acceso a configuraciones administrativas ni a la gestión de usuarios o productos.
+
+El \textbf{Administrador} (figura \ref{fig:cu_administrador}) posee control total del sistema, incluyendo la gestión de productos, usuarios, inventario y clientes (altas, bajas, modificaciones y consultas), así como la consulta de reportes y la supervisión de operaciones.
+
+El \textbf{Cliente} (figura \ref{fig:cu_cliente}) interactúa con el sistema de forma indirecta a través del cajero: solicita productos, agrega artículos al carrito, realiza el pago, añade propina si lo desea y recibe el ticket de compra.
+
+\subsection{Diagrama de Clases}
+
+El diagrama de clases modela la estructura estática del sistema, mostrando las clases, sus atributos, métodos y las relaciones entre ellas. Representa la implementación de los principios de POO: la herencia entre \texttt{Usuario} y sus subclases, el encapsulamiento de los atributos, y las asociaciones entre las entidades del dominio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Imagenes/UML_Clases/Clases.png}
+    \caption{Diagrama de clases del sistema NexoPay}
+    \label{fig:diagrama_clases}
+\end{figure}
+
+\subsection{Diagramas de Secuencia}
+
+Los diagramas de secuencia ilustran el flujo de mensajes entre los objetos del sistema durante la ejecución de un caso de uso específico, mostrando el orden temporal de las interacciones.
+
+\subsubsection*{Administrador}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/InicioSesion.png}
+    \caption{Diagrama de secuencia -- Inicio de sesión (Administrador)}
+    \label{fig:seq_admin_login}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/CerrarSesion.png}
+    \caption{Diagrama de secuencia -- Cerrar sesión (Administrador)}
+    \label{fig:seq_admin_logout}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/AdministrarProductos.png}
+    \caption{Diagrama de secuencia -- Administrar productos (Administrador)}
+    \label{fig:seq_admin_productos}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/AdministracionUsuario.png}
+    \caption{Diagrama de secuencia -- Administrar usuarios (Administrador)}
+    \label{fig:seq_admin_usuarios}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/ConsultarReportes.png}
+    \caption{Diagrama de secuencia -- Consultar reportes (Administrador)}
+    \label{fig:seq_admin_reportes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Administrador/AdministrarInventario.png}
+    \caption{Diagrama de secuencia -- Administrar inventario (Administrador)}
+    \label{fig:seq_admin_inventario}
+\end{figure}
+
+\subsubsection*{Cajero}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/IniciarSesion.png}
+    \caption{Diagrama de secuencia -- Iniciar sesión (Cajero)}
+    \label{fig:seq_cajero_login}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/RegistrarVenta.png}
+    \caption{Diagrama de secuencia -- Registrar venta (Cajero)}
+    \label{fig:seq_cajero_venta}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/SeleccionDeProducto.png}
+    \caption{Diagrama de secuencia -- Selección de productos (Cajero)}
+    \label{fig:seq_cajero_productos}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/ConsultarPreciosDeProductos.png}
+    \caption{Diagrama de secuencia -- Consultar precios de productos (Cajero)}
+    \label{fig:seq_cajero_precios}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/GenerarTiketsDeVentar.png}
+    \caption{Diagrama de secuencia -- Generar ticket de venta (Cajero)}
+    \label{fig:seq_cajero_ticket}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cajero/FinalizarTransacciones.png}
+    \caption{Diagrama de secuencia -- Finalizar transacciones (Cajero)}
+    \label{fig:seq_cajero_finalizar}
+\end{figure}
+
+\subsubsection*{Cliente}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cliente/SolicitarProductosEnAplicaciones.png}
+    \caption{Diagrama de secuencia -- Solicitar productos (Cliente)}
+    \label{fig:seq_cliente_solicitar}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cliente/AnadirProductosAlCarrito.png}
+    \caption{Diagrama de secuencia -- Añadir productos al carrito (Cliente)}
+    \label{fig:seq_cliente_carrito}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cliente/RealizarPago.png}
+    \caption{Diagrama de secuencia -- Realizar pago (Cliente)}
+    \label{fig:seq_cliente_pago}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cliente/AnadirPropina.png}
+    \caption{Diagrama de secuencia -- Añadir propina (Cliente)}
+    \label{fig:seq_cliente_propina}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramasDeSecuencia/Cliente/RecibirRecibo.png}
+    \caption{Diagrama de secuencia -- Recibir ticket de compra (Cliente)}
+    \label{fig:seq_cliente_recibo}
+\end{figure}
+
+\subsection{Diagramas de Estados}
+
+Los diagramas de estados modelan el ciclo de vida de los objetos principales del sistema, mostrando los estados posibles que pueden tomar y las transiciones entre ellos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaEstados/Cajero_RealizarVenta.png}
+    \caption{Diagrama de estados -- Proceso de venta (Cajero)}
+    \label{fig:estado_venta}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaEstados/Admin_AltaProducto.png}
+    \caption{Diagrama de estados -- Alta de producto (Administrador)}
+    \label{fig:estado_alta_producto}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaEstados/Admin_AltaUsuario.png}
+    \caption{Diagrama de estados -- Alta de usuario (Administrador)}
+    \label{fig:estado_alta_usuario}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaEstados/Cajero_EliminarProducto.png}
+    \caption{Diagrama de estados -- Eliminar producto (Cajero)}
+    \label{fig:estado_eliminar_producto}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaEstados/Cliente_Compra.png}
+    \caption{Diagrama de estados -- Proceso de compra (Cliente)}
+    \label{fig:estado_compra_cliente}
+\end{figure}
+
+\subsection{Diagrama de Componentes}
+
+El diagrama de componentes muestra la organización modular del sistema, identificando los componentes de software y sus dependencias. NexoPay está organizado en los siguientes componentes: vistas (interfaz gráfica con Swing), controladores (lógica de control de flujo), servicios (lógica de negocio), modelos (clases del dominio), datos (acceso a base de datos) y utilidades (funciones de apoyo transversal).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaComponentes/DiagramaComponentes.png}
+    \caption{Diagrama de componentes del sistema NexoPay}
+    \label{fig:diagrama_componentes}
+\end{figure}
+
+\subsection{Diagrama de Despliegue}
+
+El diagrama de despliegue ilustra la infraestructura física sobre la que opera el sistema, especificando los nodos de hardware y la distribución del software entre ellos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/DiagramaDespliegue/DiagramaDespliegue.png}
+    \caption{Diagrama de despliegue del sistema NexoPay}
+    \label{fig:diagrama_despliegue}
+\end{figure}
+
+\subsection{Diagrama Entidad-Relación}
+
+El diagrama entidad-relación (ER) modela la estructura de la base de datos del sistema, mostrando las entidades, sus atributos y las relaciones entre ellas con sus respectivas cardinalidades.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Imagenes/DiagramaEntidadyRelacion/DiagramaEntidadRelacion.png}
+    \caption{Diagrama entidad-relación de la base de datos de NexoPay}
+    \label{fig:diagrama_er}
+\end{figure}
+
+\subsection{Explicación de los Diagramas UML y su Función en el Sistema}
+
+Cada diagrama elaborado cumple una función específica dentro del proceso de análisis y diseño:
+
+Los \textbf{diagramas de casos de uso} definen el alcance funcional del sistema desde la perspectiva de los usuarios, sirviendo como base para la identificación de requerimientos y la planificación de las funcionalidades a implementar.
+
+El \textbf{diagrama de clases} es el artefacto central del diseño orientado a objetos. Establece la estructura del código, guía la implementación y documenta las relaciones entre los componentes del software. En NexoPay, la jerarquía de clases refleja directamente los principios de POO aplicados.
+
+Los \textbf{diagramas de secuencia} complementan al diagrama de clases mostrando el comportamiento dinámico: cómo los objetos colaboran entre sí en el tiempo para ejecutar un caso de uso. Son especialmente útiles para validar que el diseño es capaz de satisfacer los requerimientos funcionales.
+
+Los \textbf{diagramas de estados} documentan el ciclo de vida de los objetos clave del sistema, como la venta (de ``en proceso'' a ``finalizada'') o el producto (de ``activo'' a ``eliminado''), ayudando a identificar las transiciones y validaciones necesarias en el código.
+
+Los \textbf{diagramas de componentes y despliegue} ofrecen una vista arquitectónica del sistema, útil para planificar la implementación, la distribución del trabajo en equipo y la configuración del entorno de ejecución.
+
+El \textbf{diagrama ER} guía la creación del esquema de la base de datos, asegurando que la estructura de almacenamiento sea coherente con el modelo de dominio del sistema.
+
+% --------------------------------------------------
+\section{Arquitecturas del Sistema}
+% --------------------------------------------------
+
+\subsection{Diseño de la Arquitectura del Sistema}
+
+NexoPay adopta una \textbf{arquitectura monolítica en capas}, en la que todos los componentes del sistema conviven en un mismo ejecutable pero están organizados en capas con responsabilidades bien definidas y separadas. Esta organización interna sigue el patrón de diseño en capas, que divide el sistema en:
+
+\begin{itemize}
+    \item \textbf{Capa de vistas (\texttt{views}):} Contiene las clases que implementan la interfaz gráfica con Swing. Es la única capa con la que interactúa directamente el usuario. No contiene lógica de negocio.
+    \item \textbf{Capa de controladores (\texttt{controllers}):} Actúa como intermediaria entre las vistas y los servicios. Recibe los eventos generados por la interfaz, invoca los servicios correspondientes y devuelve los resultados a la vista.
+    \item \textbf{Capa de servicios (\texttt{services}):} Contiene la lógica de negocio del sistema: cálculo de totales, validación de stock, generación de tickets. Es independiente de la interfaz gráfica y del mecanismo de almacenamiento.
+    \item \textbf{Capa de modelos (\texttt{models}):} Define las clases del dominio del problema: \texttt{Usuario}, \texttt{Producto}, \texttt{Venta}, \texttt{Cliente}, etc. Implementa los principios de POO mediante herencia, encapsulamiento y polimorfismo.
+    \item \textbf{Capa de acceso a datos (\texttt{data}):} Gestiona la comunicación con la base de datos. Contiene las consultas SQL y la lógica de conexión, aislando al resto del sistema de los detalles de persistencia.
+    \item \textbf{Capa de utilidades (\texttt{utils}):} Contiene funciones de apoyo transversal: validaciones de entrada, formateo de fechas y montos, generación de identificadores únicos.
+\end{itemize}
+
+\subsection{Modelos Arquitectónicos Empleados}
+
+\textbf{Arquitectura monolítica:} El sistema se construye como una aplicación autónoma e integrada. Esta elección es coherente con la naturaleza del proyecto: una aplicación de escritorio para un comercio pequeño o mediano, donde la sencillez de instalación y la ausencia de dependencias de red son ventajas clave.
+
+\textbf{Patrón cliente-servidor (local):} Dependiendo de la base de datos utilizada, el sistema puede operar en modo completamente local (SQLite, base de datos embebida) o conectándose a un servidor de base de datos MySQL en la misma red local. En el segundo caso, la aplicación actúa como cliente del servidor de base de datos.
+
+\textbf{Diseño en capas:} Aunque el sistema es monolítico en su despliegue, internamente aplica una separación clara de responsabilidades que facilita el mantenimiento, las pruebas y la extensión del sistema.
+
+\subsection{Tecnologías y Herramientas Seleccionadas}
+
+\begin{table}[H]
+\centering
+\caption{Tecnologías y herramientas utilizadas en NexoPay}
+\label{tab:tecnologias}
+\begin{tabular}{|p{4cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Tecnología / Herramienta} & \textbf{Categoría} & \textbf{Uso en el proyecto} \\ \hline
+Java (JDK 17+) & Lenguaje de programación & Implementación de toda la lógica del sistema con POO \\ \hline
+Java Swing & Biblioteca de GUI & Construcción de la interfaz gráfica de escritorio \\ \hline
+MySQL & Base de datos relacional & Almacenamiento persistente de datos en entornos con servidor \\ \hline
+SQLite & Base de datos embebida & Alternativa de almacenamiento local sin servidor \\ \hline
+JDBC & API de conectividad & Comunicación entre Java y la base de datos \\ \hline
+Visual Studio Code & IDE & Desarrollo y depuración del código fuente \\ \hline
+Draw.io / diagrams.net & Herramienta de diagramas & Elaboración de diagramas UML y ER \\ \hline
+Git & Control de versiones & Gestión del código fuente y colaboración en equipo \\ \hline
+\end{tabular}
+\end{table}
+
+% --------------------------------------------------
+\section{Codiseño Hardware-Software}
+% --------------------------------------------------
+
+\subsection{Relación entre Software y Hardware dentro del Sistema}
+
+Un sistema POS como NexoPay no opera de forma aislada; su funcionamiento efectivo depende de la correcta integración con componentes de hardware que facilitan la operación en el punto de venta. El software está diseñado para interactuar con estos componentes a través de interfaces estándar del sistema operativo y de Java.
+
+La relación entre software y hardware en NexoPay puede entenderse en dos niveles: el hardware de cómputo que ejecuta el software (computadora de escritorio o laptop), y los periféricos especializados del punto de venta (impresora de tickets, lector de código de barras, visor de cliente y caja registradora).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/Codiseno/SistemaPOS.png}
+    \caption{Integración hardware-software del sistema NexoPay}
+    \label{fig:codiseno_pos}
+\end{figure}
+
+\subsection{Selección de Componentes de Hardware}
+
+\begin{table}[H]
+\centering
+\caption{Componentes de hardware del sistema POS}
+\label{tab:hardware}
+\begin{tabular}{|p{4cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Componente} & \textbf{Función} & \textbf{Integración con el software} \\ \hline
+Computadora de escritorio / Laptop & Ejecutar la aplicación NexoPay & Plataforma principal; requiere JRE instalado \\ \hline
+Monitor o pantalla & Mostrar la interfaz gráfica al cajero & Interfaz estándar del sistema operativo \\ \hline
+Teclado y ratón & Entrada de datos por parte del cajero & Dispositivos de entrada estándar \\ \hline
+Impresora de tickets (térmica) & Imprimir comprobantes de compra & Integración mediante la API de impresión de Java (\texttt{javax.print}) \\ \hline
+Lector de código de barras & Escanear productos para agilizar su selección & Entrada de datos por teclado virtual (modo HID) \\ \hline
+Visor de cliente (display) & Mostrar el total al cliente durante la venta & Comunicación por puerto serial o USB \\ \hline
+Caja registradora / cajón de dinero & Almacenar el efectivo de las transacciones & Apertura activada por señal de la impresora \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Estrategias de Integración Software-Hardware}
+
+La integración entre NexoPay y los componentes de hardware se realiza mediante las siguientes estrategias:
+
+\textbf{Abstracción de dispositivos:} El software utiliza interfaces Java (\texttt{javax.print} para impresión, \texttt{javax.comm} o \texttt{jSerialComm} para puertos seriales) que abstraen los detalles específicos del hardware, permitiendo que el sistema funcione con distintos modelos de impresoras y lectores de código de barras sin modificar el código principal.
+
+\textbf{Entrada por teclado virtual (HID):} Los lectores de código de barras modernos funcionan en modo HID (\textit{Human Interface Device}), simulando la entrada de teclado. NexoPay aprovecha esta característica para capturar el código escaneado directamente en el campo de selección de productos, sin requerir controladores adicionales.
+
+\textbf{Generación de tickets por software:} El sistema genera el contenido del ticket (productos, cantidades, precios, total, método de pago) en formato de texto plano y lo envía a la impresora térmica mediante el subsistema de impresión de Java, garantizando compatibilidad con la mayoría de los modelos del mercado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Imagenes/Codiseno/DiagramaDeDesicion.png}
+    \caption{Diagrama de decisión para la integración hardware-software}
+    \label{fig:diagrama_decision}
+\end{figure}
+
+% ==================================================
+% CAPÍTULO 4: IMPLEMENTACIÓN Y PRUEBAS
+% ==================================================
+\chapter{Implementación y Pruebas}
+
+\section{Descripción de la Implementación}
+
+NexoPay se implementó como una aplicación de escritorio en Java, organizada en la siguiente estructura de paquetes que refleja la arquitectura en capas definida en el diseño:
+
+\begin{itemize}
+    \item \texttt{models/} -- Clases del dominio: \texttt{Usuario}, \texttt{Cajero}, \texttt{Administrador}, \texttt{Producto}, \texttt{Venta}, \texttt{DetalleVenta}, \texttt{Cliente}, \texttt{MetodoPago}.
+    \item \texttt{services/} -- Lógica de negocio: \texttt{AuthService}, \texttt{VentaService}, \texttt{ProductoService}, \texttt{InventarioService}, \texttt{ReporteService}.
+    \item \texttt{controllers/} -- Control de flujo entre vistas y servicios.
+    \item \texttt{views/} -- Pantallas Swing: login, menú principal, registro de ventas, gestión de productos, reportes.
+    \item \texttt{data/} -- Acceso a base de datos: \texttt{ConexionBD}, \texttt{UsuarioDAO}, \texttt{ProductoDAO}, \texttt{VentaDAO}.
+    \item \texttt{utils/} -- Validadores, formateadores y generador de tickets.
+\end{itemize}
+
+La herencia se aplica en la jerarquía de usuarios: la clase abstracta \texttt{Usuario} define los atributos y métodos comunes, mientras que \texttt{Cajero} y \texttt{Administrador} extienden esta clase añadiendo las funcionalidades específicas de cada rol. El polimorfismo se aprovecha al invocar el método \texttt{obtenerMenu()} sobre una referencia de tipo \texttt{Usuario}, que devuelve las opciones correspondientes al tipo concreto del objeto.
+
+\section{Consultas SQL de la Base de Datos}
+
+Las siguientes consultas SQL fueron implementadas en la capa de acceso a datos y corresponden a las operaciones más relevantes del sistema:
+
+\subsection{Consulta 1: Todos los usuarios y su tipo}
+
+\begin{lstlisting}[caption={Consulta todos los usuarios y su tipo de usuario}, label={lst:sql1}]
+SELECT Usuario.Nombre, tipousuario.NombreTipo
+FROM Usuario
+INNER JOIN tipousuario
+ON Usuario.idTipoUsuario = tipousuario.idTipoUsuario;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/BaseDeDatos/todos_los_usuarios.png}
+    \caption{Resultado -- Todos los usuarios y su tipo}
+    \label{fig:sql_todos_usuarios}
+\end{figure}
+
+\subsection{Consulta 2: Todos los productos del catálogo}
+
+\begin{lstlisting}[caption={Consulta todos los productos registrados}, label={lst:sql2}]
+SELECT * FROM producto;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/BaseDeDatos/tipos_de_usuarios.png}
+    \caption{Resultado -- Catálogo completo de productos}
+    \label{fig:sql_productos}
+\end{figure}
+
+\subsection{Consulta 3: Detalles de venta con productos correspondientes}
+
+\begin{lstlisting}[caption={Consulta detalles de venta y productos asociados}, label={lst:sql3}]
+SELECT DetalleVenta.idVenta, Producto.Nombre,
+       DetalleVenta.Cantidad, DetalleVenta.SubTotal
+FROM DetalleVenta
+INNER JOIN Producto
+ON DetalleVenta.idProducto = Producto.idProducto;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Imagenes/BaseDeDatos/todas_las_facturas.png}
+    \caption{Resultado -- Detalles de venta con productos}
+    \label{fig:sql_detalles_venta}
+\end{figure}
+
+\subsection{Consulta 4: Ventas de un cliente y cajero que lo atendió}
+
+\begin{lstlisting}[caption={Ventas de un cliente específico con cajero que lo atendió}, label={lst:sql4}]
+SELECT Venta.idVenta, Cliente.Nombre, Usuario.Nombre
+FROM Venta
+INNER JOIN Cliente ON Venta.idCliente = Cliente.idCliente
+INNER JOIN Usuario ON Venta.idUsuario = Usuario.idUsuario
+WHERE Cliente.idCliente = 2;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Imagenes/BaseDeDatos/facturas_con_usuario.png}
+    \caption{Resultado -- Ventas del cliente 2 y cajero asignado}
+    \label{fig:sql_ventas_cliente}
+\end{figure}
+
+\subsection{Consulta 5: Clientes atendidos por un cajero}
+
+\begin{lstlisting}[caption={Clientes atendidos por un cajero específico}, label={lst:sql5}]
+SELECT Cliente.Nombre, Cliente.Apellido, Usuario.Nombre
+FROM Venta
+INNER JOIN Cliente ON Venta.idCliente = Cliente.idCliente
+INNER JOIN Usuario ON Venta.idUsuario = Usuario.idUsuario
+WHERE Usuario.idUsuario = 2;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Imagenes/BaseDeDatos/usuario_con_sus_facturas.png}
+    \caption{Resultado -- Clientes atendidos por el cajero 2}
+    \label{fig:sql_clientes_cajero}
+\end{figure}
+
+\section{Estrategia de Pruebas y Validación de Requerimientos}
+
+La estrategia de pruebas de NexoPay se apoya en dos técnicas complementarias: pruebas de caja negra y tablas de decisión.
+
+\subsection{Pruebas de Caja Negra}
+
+Las pruebas de caja negra verifican el comportamiento del sistema a partir de entradas y salidas esperadas, sin considerar la implementación interna. Se definen los escenarios de prueba a partir de los flujos principales y los casos de error de cada funcionalidad.
+
+\begin{table}[H]
+\centering
+\caption{Plan de pruebas de caja negra -- Sistema NexoPay}
+\label{tab:pruebas_caja_negra}
+\begin{tabular}{|c|p{6cm}|p{6cm}|}
+\hline
+\textbf{ID} & \textbf{Escenario / Caso de Prueba} & \textbf{Resultado Esperado} \\ \hline
+1 & Iniciar sesión con usuario ``admin'' y contraseña correcta & Ingreso exitoso al panel de administración \\ \hline
+2 & Iniciar sesión con usuario ``admin'' y contraseña incorrecta & Mensaje de error: ``Contraseña incorrecta'' \\ \hline
+3 & Registrar un producto con precio de \$0.00 & Mensaje de error: ``El precio debe ser mayor a 0'' \\ \hline
+4 & Registrar un producto con nombre vacío & Mensaje de error: ``El nombre es obligatorio'' \\ \hline
+5 & Agregar 10 unidades al carrito cuando solo hay 5 en stock & Mensaje de error: ``Stock insuficiente'' \\ \hline
+6 & Realizar una venta y pagar con un método no registrado & Transacción rechazada \\ \hline
+7 & Consultar un producto por un ID que no existe & Mensaje: ``Producto no encontrado'' \\ \hline
+8 & Finalizar venta con carrito lleno y pago en efectivo & Ticket generado y stock actualizado \\ \hline
+9 & Eliminar un usuario administrador del sistema & Confirmación de baja exitosa \\ \hline
+10 & Modificar stock con valor negativo que deja el total bajo cero & Error: ``El ajuste dejaría el stock en negativo'' \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Tablas de Decisión}
+
+Las tablas de decisión modelan las combinaciones posibles de condiciones de entrada y los resultados esperados para cada combinación, asegurando la cobertura de todos los escenarios relevantes.
+
+\begin{table}[H]
+\centering
+\caption{Tabla de decisión -- Inicio de sesión}
+\label{tab:decision_login}
+\begin{tabular}{|p{5cm}|c|c|c|c|}
+\hline
+\textbf{Condición / Resultado} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} \\ \hline
+El usuario existe en la BD & V & V & F & F \\ \hline
+La contraseña es correcta & V & F & V & F \\ \hline
+\hline
+Permitir acceso al sistema & X & & & \\ \hline
+Mostrar error: Credenciales inválidas & & X & X & X \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Tabla de decisión -- Finalizar venta}
+\label{tab:decision_venta}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|}
+\hline
+\textbf{Condición / Resultado} & \textbf{R1} & \textbf{R2} & \textbf{R3} & \textbf{R4} \\ \hline
+Hay productos en el carrito & V & V & F & F \\ \hline
+Método de pago es válido & V & F & V & F \\ \hline
+\hline
+Generar ticket y registrar venta & X & & & \\ \hline
+Mostrar error: Carrito vacío o pago inválido & & X & X & X \\ \hline
+\end{tabular}
+\end{table}
+
+% ==================================================
+% CAPÍTULO 5: CONCLUSIONES
+% ==================================================
+\chapter{Conclusiones}
+
+\section{Reflexión sobre el Desarrollo del Proyecto}
+
+El desarrollo de NexoPay representó un ejercicio integral de ingeniería de software, en el que los conceptos teóricos de la Programación Orientada a Objetos se tradujeron en decisiones concretas de diseño e implementación. La jerarquía de clases de usuarios, la separación del sistema en capas con responsabilidades bien definidas y la integración con una base de datos relacional son ejemplos tangibles de cómo los principios de POO facilitan la construcción de software organizado, legible y mantenible.
+
+El proceso de análisis previo al desarrollo resultó fundamental: los diagramas UML elaborados permitieron anticipar problemas de diseño, definir con claridad las responsabilidades de cada componente y establecer un mapa de trabajo compartido para el equipo. Esta experiencia refuerza la importancia de dedicar tiempo al diseño antes de comenzar a codificar.
+
+La integración de múltiples áreas del conocimiento, incluyendo bases de datos, interfaces gráficas, lógica de negocio y principios de diseño, demostró que el desarrollo de software real es una actividad multidisciplinaria que requiere no solo habilidades técnicas, sino también capacidad de planificación, comunicación y trabajo en equipo.
+
+\section{Lecciones Aprendidas}
+
+\begin{itemize}
+    \item \textbf{El diseño previo ahorra tiempo de desarrollo:} Los diagramas UML elaborados antes de comenzar a codificar actuaron como una guía clara que redujo la ambigüedad y el retrabajo durante la implementación.
+    \item \textbf{La separación de responsabilidades facilita el mantenimiento:} Organizar el código en capas (vistas, controladores, servicios, modelos, datos) hizo que las modificaciones en una capa raramente afectaran a las demás, simplificando las correcciones y mejoras.
+    \item \textbf{Los nombres descriptivos son más importantes de lo que parecen:} Invertir tiempo en elegir nombres claros para clases, métodos y variables redujo significativamente el tiempo necesario para comprender el código al revisarlo días después de haberlo escrito.
+    \item \textbf{Las pruebas deben planificarse desde el inicio:} Definir los casos de prueba junto con los requerimientos permitió detectar casos límite (stock negativo, carrito vacío, credenciales inválidas) que de otro modo podrían haberse pasado por alto hasta etapas tardías del desarrollo.
+    \item \textbf{La base de datos requiere diseño cuidadoso:} Las relaciones entre tablas, las restricciones de integridad referencial y la elección de los tipos de datos tuvieron un impacto directo en la facilidad de implementación de las consultas y en la consistencia de los datos.
+\end{itemize}
+
+\section{Posibles Mejoras Futuras}
+
+Con miras a versiones futuras del sistema, se identifican las siguientes mejoras que ampliarían sus capacidades y su robustez:
+
+\begin{itemize}
+    \item \textbf{Módulo de devoluciones:} Implementar la funcionalidad de procesar devoluciones de productos, con actualización automática del inventario y registro de la operación en el historial de ventas.
+    \item \textbf{Gestión de descuentos y promociones:} Añadir soporte para descuentos por producto, por categoría o por monto total de la venta, incluyendo la configuración de vigencias y condiciones.
+    \item \textbf{Reportes avanzados con gráficas:} Enriquecer el módulo de reportes con visualizaciones gráficas (barras, líneas) que faciliten el análisis de tendencias de ventas a lo largo del tiempo.
+    \item \textbf{Soporte multi-sucursal:} Extender la arquitectura para soportar múltiples puntos de venta conectados a una base de datos centralizada, con sincronización de inventario en tiempo real.
+    \item \textbf{Exportación de reportes a PDF:} Permitir la exportación de los reportes de ventas en formato PDF para su archivo y distribución.
+    \item \textbf{Notificaciones de stock bajo:} Implementar alertas automáticas cuando el stock de un producto caiga por debajo de un umbral configurable, facilitando la gestión de reabastecimiento.
+    \item \textbf{Migración a arquitectura cliente-servidor web:} En una versión más avanzada, migrar la interfaz de Swing a una interfaz web con JavaFX o tecnologías web estándar, permitiendo el acceso al sistema desde múltiples dispositivos.
+\end{itemize}
+
+% ==================================================
+% BIBLIOGRAFÍA
+% ==================================================
+\chapter{Bibliografía}
+
+\begin{thebibliography}{99}
+
+\bibitem{laudon2012}
+K. C. Laudon and J. P. Laudon, \textit{Sistemas de información gerencial}, 12\textsuperscript{a} ed. Pearson Educación, 2012.
+
+\bibitem{deitel2012}
+P. J. Deitel and H. M. Deitel, \textit{Java: How to Program}, 9\textsuperscript{th} ed. Pearson College Division, 2012.
+
+\bibitem{oracle2023}
+Oracle, ``Java Documentation -- Get Started,'' Oracle Help Center, Jan. 31, 2023. [Online]. Available: \url{https://docs.oracle.com/en/java/}
+
+\bibitem{babic2023}
+T. Babic, ``20 ejemplos de consultas SQL básicas para principiantes: Una visión completa,'' \textit{LearnSQL.es}, Sep. 20, 2023. [Online]. Available: \url{https://learnsql.es/blog/20-ejemplos-de-consultas-sql-basicas-para-principiantes-una-vision-completa/}
+
+\bibitem{alarcon2021}
+J. M. Alarcón, ``TUTORIAL SQL \#3: Consultas SELECT multi-tabla básicas -- JOIN,'' \textit{campusMVP.es}, Nov. 08, 2021. [Online]. Available: \url{https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Consultas-SELECT-multi-tabla-JOIN.aspx}
+
+\bibitem{sommerville2011}
+I. Sommerville, \textit{Ingeniería del Software}, 9\textsuperscript{a} ed. Pearson Educación, 2011.
+
+\bibitem{pressman2010}
+R. S. Pressman, \textit{Ingeniería del Software: Un enfoque práctico}, 7\textsuperscript{a} ed. McGraw-Hill, 2010.
+
+\bibitem{rumbaugh2004}
+J. Rumbaugh, I. Jacobson, and G. Booch, \textit{El Lenguaje Unificado de Modelado. Manual de Referencia}, 2\textsuperscript{a} ed. Pearson Educación, 2004.
+
+\end{thebibliography}
+
+% ==================================================
+% FIN DEL DOCUMENTO
+% ==================================================
+\end{document}
